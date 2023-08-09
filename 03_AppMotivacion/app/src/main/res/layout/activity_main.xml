@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <LinearLayout
         android:id="@+id/containerLinear"
@@ -18,19 +18,22 @@
         android:paddingBottom="16dp">
 
         <ImageView
+            android:id="@+id/image_all"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_all_inclusive"
-            app:tint="@color/white" />
+            android:src="@drawable/ic_all_inclusive"/>
 
         <ImageView
+            android:id="@+id/image_happy"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
+
             android:src="@drawable/ic_happy" />
 
         <ImageView
+            android:id="@+id/image_sunny"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -39,7 +42,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/text_a"
+        android:id="@+id/text_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/containerLinear"
@@ -72,6 +75,7 @@
         android:background="@color/dark_purple" />
 
     <Button
+        android:id="@+id/button_new_phrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

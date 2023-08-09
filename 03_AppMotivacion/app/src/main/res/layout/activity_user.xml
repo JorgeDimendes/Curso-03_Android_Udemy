@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/purple"
-    tools:context=".UserActivity">
+    tools:context=".ui.UserActivity">
 
     <TextView
         android:textColor="@color/white"
