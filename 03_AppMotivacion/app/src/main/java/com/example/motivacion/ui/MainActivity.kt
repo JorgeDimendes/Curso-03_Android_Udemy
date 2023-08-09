@@ -12,7 +12,7 @@ import com.example.motivacion.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
-    private var categoryId = 1
+    private var categoryId = MotivacionConstants.FILTER.ALL
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         handleNextPhrase()
 
         //btn image
+        binding.buttonNewPhrase.setOnClickListener(this)
         binding.imageAll.setOnClickListener(this)
         binding.imageHappy.setOnClickListener(this)
         binding.imageSunny.setOnClickListener(this)
