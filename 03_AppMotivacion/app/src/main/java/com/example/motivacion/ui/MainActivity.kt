@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.motivacion.R
+import com.example.motivacion.data.Mock
 import com.example.motivacion.infra.MotivacionConstants
 import com.example.motivacion.infra.SecurityPreferences
 import com.example.motivacion.databinding.ActivityMainBinding
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Chamando função
         handleUserName()
         handleFilter(R.id.image_all)
+        handleNextPhrase()
 
         //btn image
         binding.imageAll.setOnClickListener(this)
@@ -30,11 +32,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if(view.id == R.id.button_new_phrase){
-            var s = ""
+            handleNextPhrase()
         } else if(view.id in listOf(R.id.image_all, R.id.image_happy, R.id.image_sunny)){
             handleFilter(view.id)
         }
     }
+
+    private fun handleNextPhrase(){
+        binding.textPhrase.text = Mock().getPhrase(categoryId)
+    }
+
     private fun handleFilter(id: Int){
         binding.imageAll.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
         binding.imageHappy.setColorFilter(ContextCompat.getColor(this, R.color.dark_purple))
@@ -55,7 +62,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
 
     private fun handleUserName(){
         val name = SecurityPreferences(this).getString(MotivacionConstants.key.USER_NAME)
