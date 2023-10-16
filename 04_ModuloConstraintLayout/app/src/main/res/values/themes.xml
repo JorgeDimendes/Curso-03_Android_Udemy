@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ConstraintLayout" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/fundo</item>
+
+        <item name="android:windowBackground">@color/fundo</item>
+    </style>
+
+    <style name="Theme.ConstraintLayout" parent="Base.Theme.ConstraintLayout" />
+
+    <style name="Base.Theme.ConstraintLayout2" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/color_tela_2</item>
+
+    </style>
+
+    <style name="Theme.ConstraintLayout2" parent="Base.Theme.ConstraintLayout2" />
+</resources>
