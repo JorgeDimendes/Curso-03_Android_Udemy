@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.jordev.convidado"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.jordev.convidado"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

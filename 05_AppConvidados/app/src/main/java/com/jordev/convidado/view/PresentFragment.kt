@@ -1,4 +1,4 @@
-package com.jordev.convidado.ui.slideshow
+package com.jordev.convidado.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.jordev.convidado.databinding.FragmentSlideshowBinding
+import com.jordev.convidado.databinding.FragmentPresentBinding
+import com.jordev.convidado.viewmodel.PresentViewModel
 
-class SlideshowFragment : Fragment() {
+class PresentFragment : Fragment() {
 
-    private var _binding: FragmentSlideshowBinding? = null
+    private var _binding: FragmentPresentBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class SlideshowFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+        val ViewModel =
+            ViewModelProvider(this).get(PresentViewModel::class.java)
 
-        _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
+        _binding = FragmentPresentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        slideshowViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textGallery
+        ViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
